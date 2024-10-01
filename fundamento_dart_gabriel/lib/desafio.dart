@@ -75,6 +75,17 @@ void main() {
   }
 
   // 5º Exclua todos os estudantes e em seguida imprima os pacientes
+  print('\N// 5º - Remover estudantes e imprimir os pacientes');
+  /*
+  * método removeWhere percorre cada elemento da lista pacientes
+  * a função passada como argumento = (paciente) => paciente.contains('estudante') é uma função anônima, que retorna true se o elemento paciente tiver a palavra estudante
+  * sempre que essa condição for verdadeira, removeWhere remove o elemento correspondente da lista - no caso, paciente (que foi passado como argumento)
+  * resumo: todos os pacientes com a palavra 'estudante' serão removidos da lista pacientes
+   */
+  pacientes.removeWhere((paciente) => paciente.contains('estudante'));
+  for (var paciente in pacientes) {
+    print(paciente);
+  }
 
   // 6º Inclua os pacentes abaixo nas primeira posições
   final novosPacientes = [
